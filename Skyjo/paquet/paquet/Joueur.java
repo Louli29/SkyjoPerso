@@ -16,10 +16,11 @@ public class Joueur {
         this.main=faireMain(d);
         this.mainConnu=initialiserMainConnu();
         System.out.println(nbCarteConnue());
+        System.out.println(main.size());
         
     }
 
-    public List<SkyjoCard[]> faireMain(Deck d){
+    private List<SkyjoCard[]> faireMain(Deck d){
         List<SkyjoCard[]> main = new ArrayList<>();
         for (int i=0; i<4;i++){
             SkyjoCard[] colonne=new SkyjoCard[3];
@@ -31,7 +32,7 @@ public class Joueur {
         return main; 
     }
         
-    public List<boolean[]> initialiserMainConnu() {
+    private List<boolean[]> initialiserMainConnu() {
         List<boolean[]> mainConnu = new ArrayList<>();
         for (int i=0; i<4;i++){
             boolean[] colonne=new boolean[3];
@@ -71,7 +72,22 @@ public class Joueur {
         return carteAJeter;
     }
         
-    
+    public void choisirPoubelleOuPioche(){
+
+    }
+
+    public void choisirOuRemplacerCarte(){
+
+    }
+
+    public void choisirJeterOuGarder(){
+
+    }
+
+    public void choisirCarteATourner(){
+        
+
+    }
 
 
     
