@@ -52,16 +52,7 @@ public class Deck {
 
     
 
-    public static void main(String[] args){
-
-        Deck d = new Deck ();
-
-        SkyjoCard essaie = d.piocher();
-        System.out.println(essaie.toString());
-
-        Joueur j1=new Joueur(d);
-        
-    }
+    
 
 
 }
