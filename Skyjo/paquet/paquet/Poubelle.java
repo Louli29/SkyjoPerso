@@ -11,8 +11,12 @@ public class Poubelle {
         poubelle.push(d.piocher());
     }
 
-    public SkyjoCard getDerniereCarte(){
+    public SkyjoCard getLastCard(){
         return poubelle.pop();
+    }
+
+    public SkyjoCard seeLastCard(){
+        return poubelle.peek();
     }
 
     public void ajouterCarte(SkyjoCard carte){
