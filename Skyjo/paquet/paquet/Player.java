@@ -2,17 +2,20 @@ package paquet;
 
 import java.util.ArrayList;
 import java.util.List;
-import paquet.Deck;
 import java.util.Random;
 
 
-public class Joueur {
+public abstract class Player {
     Main main;
     List<SkyjoCard[]> mainConnu=new ArrayList<>();
     Random rd = new Random();
+    Deck d;
+    Poubelle p;
 
 
-    public Joueur(Deck d,Poubelle p){
+    public Player(Deck d,Poubelle p){
+        this.d=d;
+        this.p=p;
         this.main=new Main(d);
         this.mainConnu=initialiserMainConnu();
     }
@@ -54,24 +57,47 @@ public class Joueur {
         return this.main.remplacerCarte(i,j,carteRemplacante);
         
     }
-        
-    public void choisirPoubelleOuPioche(){
 
+    public int isSameCard(SkyjoCard card){
+        int maxNb=0;
+        int numColumnMax=-1;
+        for (int i =0; i<mainConnu.size();i++){
+            int nbCard = cardOccurenceColumn(card, mainConnu.get(i));
+            if (nbCard>maxNb){
+                numColumnMax= i;
+            }
+        }
+        return numColumnMax;
     }
 
-    public void choisirOuRemplacerCarte(){
-
+    public int cardOccurenceColumn(SkyjoCard card, SkyjoCard[] column){
+        int nbSameCard=0;
+        for (SkyjoCard c : column){
+            if(c.equals(card)){
+                nbSameCard+=1;
+            }
+        }
+        return nbSameCard;
     }
 
-    public void choisirJeterOuGarder(){
+    
 
+    public int isEmpty(SkyjoCard[] column){
+        if(column[0]==null){
+            return 0;
+        }
+        else if(column[1]==null){
+            return 1;
+        }
+        else if(column[2]==null){
+            return 2;
+        }
+        return -1;
     }
 
-    public void choisirCarteATourner(){//random
-        
+    public void chooseTrashDeck(SkyjoCard card){
 
     }
-
 
     
 }

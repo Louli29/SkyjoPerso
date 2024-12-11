@@ -1,7 +1,6 @@
 package paquet;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,16 +8,14 @@ import java.util.List;
 
 public class Deck {
 
-    private static List<SkyjoCard> pioche;
-    private static final int nbMoinsDeux = 5;
-    private static final int nbZero = 15;
-    private static final int nbCarteClassique = 10;
-    private static SkyjoCard poubelle;
+    private List<SkyjoCard> pioche;
+    private final int nbMoinsDeux = 5;
+    private final int nbZero = 15;
+    private final int nbCarteClassique = 10;
     
     public Deck(){
         this.pioche=makePioche();
         Collections.shuffle(pioche);
-        this.poubelle=piocher();
     }
 
     public List<SkyjoCard> makePioche(){
@@ -48,6 +45,14 @@ public class Deck {
         SkyjoCard card=pioche.get(0);
         pioche.remove(0);
         return  card ; 
+    }
+
+    public int getMediane(){//ne fonctionne pas pour l'instant
+        int medCard=pioche.size()/2;
+        pioche.sort(null);
+        SkyjoCard med = pioche.get(medCard);
+        Collections.shuffle(pioche);
+        return med.getValeur();
     }
 
     

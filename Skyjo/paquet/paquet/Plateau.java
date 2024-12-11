@@ -1,17 +1,16 @@
 package paquet;
 
 public class Plateau {
-    static Joueur j1;
-    static Joueur j2;
+    static SmartPlayer j1;
+    static SmartPlayer j2;
     static Deck deck; 
     static Poubelle poubelle;
 
     public Plateau(){
-        this.deck=new Deck();
-        this.poubelle=new Poubelle(deck);
-        this.j1=new Joueur(deck, poubelle);
-        this.j2=new Joueur(deck, poubelle);
-        
+        Plateau.deck=new Deck();
+        Plateau.poubelle=new Poubelle(deck);
+        Plateau.j1=new SmartPlayer(deck, poubelle);
+        Plateau.j2=new SmartPlayer(deck, poubelle);
 
     }
 
