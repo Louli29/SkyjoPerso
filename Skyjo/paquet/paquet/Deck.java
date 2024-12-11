@@ -47,7 +47,7 @@ public class Deck {
         return  card ; 
     }
 
-    public int getMediane(){
+    public int getMediane(){//ne fonctionne pas pour l'instant
         int medCard=pioche.size()/2;
         pioche.sort(null);
         SkyjoCard med = pioche.get(medCard);

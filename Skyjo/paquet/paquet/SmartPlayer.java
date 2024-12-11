@@ -11,8 +11,13 @@ public class SmartPlayer extends Player{
         if (card.getValeur()<=0){
             //lancer une méthode qui joue correctement avec ces cartes
         }
-        else if (makeColumn(card)){
-            makeColumn();
+        else if (isSameCard(card) != -1 ){
+            if(cardOccurenceColumn(card, mainConnu.get(isSameCard(card))) == 2){
+                
+            }
+            else if (makeColumn(card)){
+                makeColumn();
+            }
         }
         else if(card.getValeur()<d.getMediane()){
             //lance une méthode pour dans ce cas
