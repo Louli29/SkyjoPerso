@@ -15,11 +15,11 @@ public class Poubelle {
         return poubelle.pop();
     }
 
-    public SkyjoCard seeLastCard(){
+    /*public SkyjoCard seeLastCard(){
         return poubelle.peek();
-    }
+    }*/
 
-    public void ajouterCarte(SkyjoCard carte){
+    public void addCard(SkyjoCard carte){
         poubelle.push(carte);
     }
 

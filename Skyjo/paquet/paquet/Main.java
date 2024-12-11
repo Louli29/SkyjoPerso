@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
     private List<SkyjoCard[]> main=new ArrayList<>();
+    static int nbColumn=4;
 
     public Main(Deck d){
         this.main=faireMain(d);
@@ -12,7 +13,7 @@ public class Main {
 
     private List<SkyjoCard[]> faireMain(Deck d){
         List<SkyjoCard[]> main = new ArrayList<>();
-        for (int i=0; i<4;i++){
+        for (int i=0; i<nbColumn;i++){
             SkyjoCard[] colonne=new SkyjoCard[3];
             for(int j=0; j<3; j++){
                 colonne[j]=d.piocher();
@@ -28,6 +29,7 @@ public class Main {
 
     public void deleteColumn(int i){
         main.remove(i);
+        nbColumn-=1;
     }
 
     public SkyjoCard remplacerCarte(int i, int j, SkyjoCard carteRemplacante){
